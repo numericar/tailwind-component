@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="flex h-screen justify-center items-center">
+        <button id="open-modal-btn" class="
+            px-4
+            py-2
+            bg-blue-500
+            text-white
+            rounded">open modal</button>
+
+        <!-- modal -->
+        <div id="modal-warpper" class="fixed z-10 inset-0 hidden">
+            <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-all">
+                <!-- modal box -->
+                 <div class="flex flex-col items-center justify-between rounded bg-white p-10 w-2/3">
+                    <h3 class="text-3xl uppercase font-medium text-purple-700 tracking-wider">Modal in Tailwind CSS</h3>
+                    <p class="my-8 text-lg text-gray-600">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum soluta hic earum enim quibusdam maiores mollitia eligendi excepturi eveniet, quas, explicabo adipisci nobis consectetur rem, saepe perferendis ratione impedit. Accusantium officiis quia, repellendus provident, vel porro consequatur hic ipsa fugiat suscipit minima voluptatibus, natus sunt nostrum nulla adipisci ab. Debitis vel perspiciatis dolorem mollitia molestias sed blanditiis repudiandae libero. Consectetur quam debitis est harum laboriosam quod et qui maxime. Reprehenderit laboriosam consequuntur ipsa eaque magni in voluptates quos quas vitae! Totam quisquam incidunt laboriosam doloribus, dolor accusamus necessitatibus aperiam adipisci officiis accusantium magnam consectetur nam earum qui eius vero delectus.</p>
+                    <button class="bg-red-500 text-white py-3 px-10 rounded" id="close-modal-btn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("open-modal-btn").addEventListener("click", () => {
+            document.getElementById("modal-warpper").classList.remove("hidden");
+        });
+
+        document.getElementById("close-modal-btn").addEventListener("click", () => {
+            document.getElementById("modal-warpper").classList.add("hidden");
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- https://youtu.be/Y2z5aR_szHg?si=toV18OmTGok4-dfq -->
