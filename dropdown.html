@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Component</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-200">
+    <div class="flex h-screen justify-center items-center">
+        <!-- relative ทำให้เราสามารถควมคุม element ลูกที่ถูกระบุด้วย absulute ได้ -->
+        <div class="relative">
+            <div class="
+            border-solid 
+            border-gray-500 
+            border-[1px] 
+            px-5 
+            py-2 
+            rounded-lg
+            cursor-pointer
+            font-bold
+            flex
+            justify-between
+            w-50
+            bg-white"
+            onclick="toggleDropdown()">
+                <span>options</span>
+                <img width="15" src="./icons/down-arrow-svgrepo-com.svg" />
+                </svg>
+            </div>
+            <div class="
+            rounded-lg
+            border-gray-500 
+            bg-white 
+            shadow
+            absolute
+            w-100
+            top-[50px]
+            right-0
+            overflow-hidden
+            hidden
+            transition"
+            id="dropdownItems">
+                <div class="cursor-pointer hover:bg-gray-100 p-3">Account Settings</div>
+                <div class="cursor-pointer hover:bg-gray-100 p-3">Support</div>
+                <div class="cursor-pointer hover:bg-gray-100 p-3">License</div>
+                <hr class="w-90 mx-auto text-gray-400">
+                <div class="cursor-pointer hover:bg-gray-100 p-3 text-red-500">Sign out</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            let itemsElement = document.getElementById("dropdownItems");
+
+            let foundHiddenClass = false;
+
+            for (let classItem of itemsElement.classList) {
+                if (classItem === "hidden") {
+                    foundHiddenClass = true;
+                    break;
+                } else {
+                    foundHiddenClass = false;
+                }
+            }
+
+            if (foundHiddenClass) {
+                itemsElement.classList.remove("hidden");
+            } else {
+                itemsElement.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+
+</html>
